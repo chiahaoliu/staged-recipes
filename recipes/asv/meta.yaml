@@ -20,15 +20,20 @@ requirements:
     - python
     - setuptools
     - sphinx
-    - sphinx_bootstrap_theme
+    - sphinx-bootstrap-theme
     - six
   run:
     - python
     - six
 
 test:
-  imports:
-    - asv
+  requires:
+    - pytest
+  source_files:
+    - test/
+  commands:
+    - cd test
+    - py.test
 
 about:
   home: https://github.com/spacetelescope/asv
